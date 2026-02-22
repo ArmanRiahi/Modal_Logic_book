@@ -1,0 +1,114 @@
+\documentclass[11pt, a4paper, twoside]{book}
+\usepackage{titlesec}
+\usepackage{amsthm, amsmath, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric}
+
+% === math conf ===
+\theoremstyle{definition}
+\newtheorem{definition}{تعریف}[section]
+\newtheorem{example}{مثال}[section]
+
+\theoremstyle{plain}
+\newtheorem{theorem}{قضیه}[section]
+\newtheorem{lemma}{لم}[section]
+% === ========= ===
+
+% === header pages ===
+\usepackage{fancyhdr}
+\usepackage{lipsum} % For generating dummy text
+
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\fancyhead[LE,RO]{\thepage} % Page number on left even, right odd
+\fancyhead[RE]{\nouppercase{\leftmark}} % Chapter name on right even
+\fancyhead[LO]{\nouppercase{\rightmark}} % Section name on left odd
+
+% Adjust the line thickness
+\renewcommand{\headrulewidth}{0.4pt}
+% === ============ ===
+
+\usepackage[
+  paper=a4paper,      
+  top=2.5cm,          
+  bottom=2.5cm,       
+  inner=2.5cm,         
+  outer=1.5cm,          
+  bindingoffset=0.5cm 
+]{geometry}
+% \usepackage{marginnote}
+% % تنظیم جهت پیش‌فرض یادداشت‌های حاشیه برای فارسی
+% \let\oldmarginpar\marginpar
+% \renewcommand{\marginpar}[1]{\oldmarginpar{\small\color{magenta}\raggedright #1}} 
+
+% % اگر می‌خواهید یادداشت‌ها همیشه سمت راست (در متن راست‌چین) باشند:
+% \reversemarginpar
+
+% === box ===
+\usepackage[most]{tcolorbox}
+\newtcolorbox{introbox}{
+  enhanced,
+  colback=blue!10!white, 
+  colframe=white,          % حذف خط دور با همرنگ کردن آن با سفید
+  boxrule=0pt,             % ضخامت خط دور صفر
+  sharp corners,           % گوشه‌های تیز مشابه عکس
+  left=15pt,               % فاصله متن از لبه چپ
+  right=15pt,              % فاصله متن از لبه راست
+  top=10pt,                % فاصله از بالا
+  bottom=10pt,             % فاصله از پایین
+  % fontupper=\itshape,      % ایتالیک کردن متن داخل باکس
+  halign=justify           % تراز کردن متن
+}
+% === === ===
+
+% === Titr style ===
+\usepackage{sectsty}
+% \chapterfont{\color{lightgray}}
+\sectionfont{\color{teal}}  
+\subsectionfont{\color{cyan}}  
+% === ========== ===
+
+\usepackage{xepersian}
+% Font Setup (Matches your previous settings)
+\settextfont[
+    Path = fonts/,
+    Scale = 1.1,
+    Extension = .ttf,
+    BoldFont = *Bd,
+    ItalicFont = *It,
+    BoldItalicFont = *BdIt
+]{XB Yas}
+
+\setdigitfont[Path = fonts/, Extension = .ttf]{XB Yas}
+
+
+
+\title{منطق غیر کلاسیک}
+\author{آرمان ریاحی}
+\date{\today}
+
+
+\begin{document}
+
+
+    \frontmatter
+    \maketitle
+    \tableofcontents
+    % \include{translator_preface}
+
+    
+    \mainmatter
+    % === Start chapter_1 ===
+    \include{chapters/chapter_1}
+    % === End chapter_1 ===
+
+    % === Start chapter_1 ===
+    % \include{chapters/chapter_2}
+    % === End chapter_1 === 
+
+    % \backmatter
+    % \include{references}
+
+\end{document}
